@@ -1,0 +1,31 @@
+class PriorityQueue:
+    def __init__(self):
+        self.queue = []
+
+    def insertar(self, elemento):
+        self.queue.append(elemento)
+        self.queue.sort(reverse=True)
+
+    def eliminar(self):
+        if not self.queue:
+            return None
+        return self.queue.pop()
+
+    def mostrar(self):
+        return self.queue
+
+pq = PriorityQueue()
+elementos = [(5, 'X'), (3, 'Y'), (4, 'Z'), (1, 'W'), (2, 'V')]
+
+for elemento in elementos:
+    pq.insertar(elemento)
+
+print("Cola de prioridad después de insertar elementos:")
+print(pq.mostrar())
+
+print("\nEliminando elementos de la cola de prioridad:")
+print(pq.eliminar())
+print(pq.eliminar())
+print(pq.eliminar())
+print(pq.eliminar())
+print(pq.eliminar())
